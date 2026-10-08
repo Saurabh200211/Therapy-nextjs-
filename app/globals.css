@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #29443b;
+  --sage: #748c7d;
+  --sand: #e8ded0;
+  --ivory: #faf8f3;
+  --terracotta: #b86f58;
+  --charcoal: #26312d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: var(--terracotta);
+  color: white;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.container-width {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  letter-spacing: .18em;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.reveal-line {
+  width: 52px;
+  height: 1px;
+  background: var(--terracotta);
+}
+
+.image-frame {
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.image-frame img {
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.image-frame:hover img {
+  transform: scale(1.035);
+}
+
+.paper-card {
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(41,68,59,.1);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -6px;
+  height: 1px;
+  background: var(--terracotta);
+  transition: right .3s ease;
+}
+
+.nav-link:hover::after {
+  right: 0;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(41,68,59,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41,68,59,.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .faq-plus {
+  transform: rotate(45deg);
+}
+
+.faq-plus {
+  transition: transform .25s ease;
+}
